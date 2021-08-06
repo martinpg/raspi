@@ -12,7 +12,18 @@ sudo echo 'directory mask = 0755' >> /etc/samba/smb.conf
 sudo echo 'force user = pi' >> /etc/samba/smb.conf
 sudo systemctl restart smbd
 #avr
+mkdir /home/pi/avrc
 sudo apt install gcc-avr avr-libc avrdude
+sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/avrc/avrdude_gpio.conf -P /home/pi/avrc/
+sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/avrc/compile -P /home/pi/avrc/
+sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/avrc/script.c -P /home/pi/avrc/
+sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/avrc/upload -P /home/pi/avrc/
+#c
+mkdir /home/pi/c
+sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/c/compile -P /home/pi/c/
 #python i2c
+mkdir /home/pi/python
+sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/python/I2C_LCD_driver.py -P /home/pi/python/
+sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/python/display.py -P /home/pi/python/
 sudo apt install i2c-tools python-smbus2
 i2cdetect -y 1
