@@ -1,6 +1,6 @@
 sudo apt update
 #samba
-sudo apt install samba samba-common-bin
+sudo apt install -y samba samba-common-bin
 sudo chown -R pi /home/pi/
 sudo echo '[pi]' >> /etc/samba/smb.conf
 sudo echo 'path = /home/pi/' >> /etc/samba/smb.conf
@@ -13,7 +13,7 @@ sudo echo 'force user = pi' >> /etc/samba/smb.conf
 sudo systemctl restart smbd
 #avr
 mkdir /home/pi/avrc
-sudo apt install gcc-avr avr-libc avrdude
+sudo apt install -y gcc-avr avr-libc avrdude
 sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/avrc/avrdude_gpio.conf -P /home/pi/avrc/
 sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/avrc/compile -P /home/pi/avrc/
 sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/avrc/script.c -P /home/pi/avrc/
@@ -25,5 +25,5 @@ sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/c/compile -P /ho
 mkdir /home/pi/python
 sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/python/I2C_LCD_driver.py -P /home/pi/python/
 sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/python/display.py -P /home/pi/python/
-sudo apt install i2c-tools python-smbus2
+sudo apt install -y i2c-tools python-smbus2
 i2cdetect -y 1
