@@ -1,2 +1,2 @@
 # raspi
-<p>Personal Raspberry Lite package installation script and avrdude uploader script</p>
+<p>Personal package installation script and avrdude uploader script for Raspberry Lite</p>
