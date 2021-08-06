@@ -1,0 +1,2 @@
+avr-gcc -Wall -g -Os -mmcu=atmega328p -o output.bin script.c
+avr-objcopy -j .text -j .data -O ihex output.bin output.hex
