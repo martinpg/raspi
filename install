@@ -25,5 +25,5 @@ sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/c/compile -P /ho
 mkdir /home/pi/python
 sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/python/I2C_LCD_driver.py -P /home/pi/python/
 sudo wget https://raw.githubusercontent.com/martinpg/raspi/main/python/display.py -P /home/pi/python/
-sudo apt install -y i2c-tools python-smbus2
+sudo apt install -y i2c-tools python-smbus
 i2cdetect -y 1
