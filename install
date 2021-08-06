@@ -1,0 +1,18 @@
+sudo apt update
+#samba
+sudo apt install samba samba-common-bin
+sudo chown -R pi /home/pi/
+sudo echo '[pi]' >> /etc/samba/smb.conf
+sudo echo 'path = /home/pi/' >> /etc/samba/smb.conf
+sudo echo 'writeable = yes' >> /etc/samba/smb.conf
+sudo echo 'browseable = yes' >> /etc/samba/smb.conf
+sudo echo 'public = yes' >> /etc/samba/smb.conf
+sudo echo 'create mask = 0644' >> /etc/samba/smb.conf
+sudo echo 'directory mask = 0755' >> /etc/samba/smb.conf
+sudo echo 'force user = pi' >> /etc/samba/smb.conf
+sudo systemctl restart smbd
+#avr
+sudo apt install gcc-avr avr-libc avrdude
+#python i2c
+sudo apt install i2c-tools python-smbus2
+i2cdetect -y 1
